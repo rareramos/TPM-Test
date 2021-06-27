@@ -1,0 +1,340 @@
+@import "./variables";
+@import "./fonts";
+
+*, *:after, *:before {
+  margin:      0;
+  padding:     0;
+  box-sizing:  border-box;
+  outline:     none;
+  font-family: 'IBM Plex Serif', sans-serif;
+  color:       $textColor;
+  font-style:  normal;
+}
+
+body, html {
+  margin:  0;
+  padding: 0;
+  height:  100%;
+}
+
+html {
+  font-size: 16px;
+}
+
+main {
+  padding-top: 75px;
+  position:    relative;
+}
+
+section {
+  padding: 86px 0;
+}
+
+.container {
+  max-width: 1230px;
+  padding:   0 15px;
+  margin:    0 auto;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'IBM Plex Serif', sans-serif;
+  font-weight: 600;
+  line-height: 1.5;
+  color:       $headersColor;
+}
+
+h1 {
+  font-size:     50px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size:     40px;
+  color:         $blackColor;
+  margin-bottom: 32px;
+}
+
+h3 {
+  font-size:     38px;
+  margin-bottom: 40px;
+}
+
+h4 {
+  font-size:     32px;
+  margin-bottom: 22px;
+}
+
+h5 {
+  font-size:   25px;
+  font-weight: 700;
+}
+
+h6 {
+  font-size:     16px;
+  line-height:   1.875;
+  margin-bottom: 10px;
+}
+
+p, a {
+  font-size:   20px;
+  line-height: 1.5625;
+  font-weight: 400;
+}
+
+p {
+  margin-bottom: 34px;
+}
+
+a {
+  color:           $mainColor;
+  cursor:          pointer;
+  text-decoration: none;
+  &:hover, &:active {
+    text-decoration: none;
+    opacity:         .7;
+  }
+}
+
+a {
+  transition: .2s linear;
+}
+
+img {
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+label {
+  margin-bottom: 32px;
+  font-size:     16px;
+  font-weight:   400;
+  line-height:   1;
+  display:       block;
+}
+
+input:not([type='checkbox']), textarea, select {
+  width:            100%;
+  border:           1px solid #dddddd;
+  padding:          16px 19px;
+  font-size:        16px;
+  line-height:      1;
+  color:            $blackColor;
+  background-color: $whiteColor;
+  box-shadow:       none;
+  border-radius:    4px;
+  transition:       .2s linear;
+  &::placeholder {
+    color:     #728387;
+    font-size: 16px;
+  }
+  &:hover, &:focus {
+    border: 1px solid $secondColor;
+  }
+}
+
+input::placeholder {
+  color: #bbbbbb;
+}
+
+select, input:not([type='checkbox']) {
+  -moz-appearance:    none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance:         none;
+}
+
+select {
+  position:              relative;
+  background:            $whiteColor url("../public/icons/arrow-down.svg") center right no-repeat;
+  background-size:       4%;
+  background-position-x: 96%;
+  border-radius:         3px;
+  max-width:             400px;
+}
+
+
+.error {
+  color:         red;
+  font-size:     0.75rem;
+  padding-left:  1rem;
+  font-weight:   bold;
+  margin-bottom: 10px;
+}
+
+.ta-c {
+  text-align: center;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+
+iframe {
+  width: 100%;
+}
+
+button {
+  font-family: 'IBM Plex Serif', sans-serif;
+  background:  transparent;
+  box-shadow:  none;
+  cursor:      pointer;
+  &:hover, &:active {
+    opacity: .7;
+  }
+}
+
+button[disabled] {
+  pointer-events: none;
+  filter:         grayscale(0.8);
+}
+
+input[disabled] {
+  pointer-events: none;
+  border:         0.0625rem solid #E4E8EB;
+}
+
+.btn-filled, .btn-second, .btn-outlined {
+  cursor:          pointer;
+  display:         inline-flex;
+  white-space:     nowrap;
+  align-items:     center;
+  justify-content: center;
+  box-shadow:      none;
+  background:      $secondColor;
+  border:          1px solid $secondColor;
+  color:           $whiteColor;
+  border-radius:   40px;
+  font-size:       16px;
+  font-weight:     700;
+  line-height:     1;
+  text-align:      center;
+  padding:         20px 36px;
+  text-decoration: none;
+  transition:      .2s linear;
+  &:active, &:hover {
+    background: transparent;
+    color:      $secondColor;
+  }
+}
+
+.btn-outlined {
+  color:      $mainColor;
+  background: transparent;
+  border:     1px solid $mainColor;
+  &:active, &:hover {
+    background: transparent;
+    border:     1px solid $secondColor;
+    color:      $secondColor;
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.d-hidden {
+  opacity:    0;
+  visibility: hidden;
+}
+
+.d-block {
+  display: block !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+#__next {
+  display:        flex;
+  flex-direction: column;
+  height:         100%;
+}
+
+#__next-prerender-indicator {
+  display: none;
+}
+
+.desktop {
+  display: none !important;
+}
+
+.mobile {
+  display: flex !important;
+}
+
+@media screen and (max-width: 992px) {
+  section {
+    padding: 40px 0;
+  }
+  main {
+    padding-top: 70px;
+  }
+  h1 {
+    font-size:     36px;
+    margin-bottom: 18px;
+  }
+  h2 {
+    font-size: 34px;
+  }
+  h3 {
+    font-size:     28px;
+    margin-bottom: 20px;
+  }
+  h4 {
+    font-size: 24px;
+  }
+  p, li, a, label, input, input::placeholder {
+    font-size: 16px;
+  }
+  p {
+    margin-bottom: 24px;
+  }
+  .desktop {
+    display: flex !important;
+  }
+
+  .mobile {
+    display: none !important;
+  }
+}
+
+
+// animation
+@media screen and (min-width: 767px) {
+  section {
+    overflow: hidden;
+  }
+
+  .title {
+    > div {
+      opacity:   0;
+      transform: translate(100%, 0);
+    }
+  }
+
+  .content {
+    > div {
+      opacity:   0;
+      transform: translate(-100%, 0);
+    }
+  }
+
+  .get {
+    > div {
+      opacity:   0;
+      transform: translate(100%, 0);
+    }
+  }
+}
